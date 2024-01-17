@@ -1,0 +1,127 @@
+main{
+    display: block;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.brand{
+    font-family: 'Kurale', serif;
+    font-size: 27px;
+    color: #262424;
+}
+
+.nav-link{
+    font-family: 'Kurale', serif;
+    font-size: 19px;
+    color: #5f5b5b;
+}
+
+.signUpButton{
+  background: #f7a3f6;
+  background-image: -webkit-linear-gradient(top, #f7a3f6, #9d15e6);
+  background-image: -moz-linear-gradient(top, #f7a3f6, #9d15e6);
+  background-image: -o-linear-gradient(top, #f7a3f6, #9d15e6);
+  background-image: linear-gradient(to bottom, #f7a3f6, #9d15e6);
+  border: none;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  text-shadow: 0px 1px 3px #4d4d4d;
+  font-family: 'Kurale', serif;
+  color: #ffffff;
+  font-size: 17px;
+  padding: 7px 11px 7px 11px;
+  text-decoration: none;
+}
+
+.signUpButton:hover{
+  background: #bbe4fc;
+  background-image: -webkit-linear-gradient(top, #bbe4fc, #6921f8);
+  background-image: -moz-linear-gradient(top, #bbe4fc, #6921f8);
+  background-image: -o-linear-gradient(top, #bbe4fc, #6921f8);
+  background-image: linear-gradient(to bottom, #bbe4fc, #6921f8);
+  color: #ffffff;
+}
+
+.leading{
+    background-image:linear-gradient(rgba(34, 33, 33, 0.5),rgba(52, 51, 51, 0.5)), url("../images/lead1.png");
+    background-repeat: none;
+    background-size: cover;
+    background-position: center;  
+}
+
+.leadText{
+    background-color: rgba(189, 186, 186, 0.6);
+    border-radius: 2%;
+    font-family: 'Kurale', serif;
+}
+
+.present .col-lg-4{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding: 3rem;
+    text-align: center;
+}
+
+.circle{
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+}
+
+.view-detail{
+    position: relative;
+    font-family: 'Kurale', serif;;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 1.4em;
+    cursor: pointer;
+    border: 0;
+    background: linear-gradient(to right, #8e2de2, #4a00e0);
+    color: ghostwhite;
+    overflow: hidden;
+}
+
+
+
+.view-detail span {
+    position: relative;
+    z-index: 10;
+    transition: color 0.4s;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3em 0.6em 0.3em 0.6em;
+  
+} 
+  
+.view-detail::before,
+.view-detail::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+  
+.view-detail::before {
+    content: "";
+    color: #ffffff;
+    background: #14032d;
+    width: 120%;
+    left: -10%;
+    transform: skew(30deg);
+    transition: 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+  
+.view-detail:hover::before {
+    transform: translate3d(100%, 0, 0);
+}
+  
+.view-detail:active {
+    transform: scale(0.95);
+}
+  

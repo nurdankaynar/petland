@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kurale&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/home.css" />
+    <title>petland</title>
+</head>
+
+<body>
+
+    <!-- navbar start -->
+    <div class="container">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <div class="col-md-3 mb-2 mb-md-0">
+                <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none align-items-center">
+                  <img src="/images/pawprint.png" class="bi" width="50" height="50"></img>
+                  <span class="brand ms-1">Pet Land</span>
+                </a>
+                
+            </div>
+      
+            <ul class="nav nav-underline col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+              <li><a href="/" class="nav-link px-2 ">Home</a></li>
+              <li><a href="#" class="nav-link px-2 ">Cats</a></li>
+              <li><a href="#" class="nav-link px-2 ">Dogs</a></li>
+              <li><a href="#" class="nav-link px-2 ">Health</a></li>
+              <li><a href="#" class="nav-link px-2 ">About</a></li>
+            </ul>
+            <div class="col-4 d-flex justify-content-end align-items-center">
+                <a class="btn btn-sm signUpButton" href="#">Log In</a>
+            </div>
+      
+        
+        </header>
+    </div>
+
+    <!-- dark-light mode -->
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+        <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (dark)">
+          <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+          <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+          <li>
+            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+              <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+              Light
+              <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="dark" aria-pressed="true">
+              <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+              Dark
+              <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+            </button>
+          </li>
+        </ul>
+    </div>
+
+    <!-- lead blog -->
+    <main class="container">
+        <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis leading">
+            <div class="col-lg-6 p-3 leadText">
+              <h1 class="display-4 fst-italic">What to Consider When Adopting a Pet?</h1>
+              <p class="lead my-3">Bringing a new furry friend into your life can be an incredibly rewarding experience, but it's important to approach pet adoption with careful consideration. Before you embark on this heartwarming journey, there are several key factors to keep in mind to ensure both you and your future companion enjoy a harmonious and fulfilling relationship.</p>
+              <p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">Continue reading...</a></p>
+            </div>
+        </div>
+
+        <!-- most visited blogs -->
+        <div class="row present">
+            <div class="col-lg-4">
+                <img src="/images/friendlycat6.png" class="circle" >
+                <h2 class="fw-normal">The Friendliest Cat Breeds</h2>
+                <p>For feline enthusiasts seeking a purr-fect companion with an affectionate nature and a penchant for companionship, certain cat breeds are renowned for their friendly demeanor.</p>
+                <button class="view-detail"> <span>View Details</span> </button>
+
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img src="/images/playdog1.png" class="circle" alt="">
+                <h2 class="fw-normal"> The Most Playful Dog Breeds</h2>
+                <p>In the world of canine companionship, some breeds stand out for their boundless energy, and an undeniable love for playtime. If you're looking to add a furry bundle of joy to your family consider these playful dog breeds.</p>
+                <button class="view-detail"> <span>View Details</span> </button>
+
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img src="/images/cathealth7.png" class="circle">
+                <h2 class="fw-normal">Whisker-Licking Good Foods</h2>
+                <p>Just like humans, our feline friends deserve a diet that promotes their overall well-being and keeps them thriving. Choosing the right food for your cat is crucial for their health, energy levels, and longevity.</p>
+                <button class="view-detail"> <span>View Details</span> </button>
+
+            </div><!-- /.col-lg-4 -->
+        </div>
+        
+        <hr class="featurette-divider mb-5">
+
+        <!-- display recent blogs -->
+        <div class="row pt-3 mb-2">
+            <% if(locals.blogs && blogs.length> 0){ %>
+                <% blogs.forEach(blog => { %>
+                    <div class="col-md-6">
+                        <div
+                            class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                            <div class="col p-4 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary-emphasis"> <%= blog.selectedPet %> </strong>
+                                <h3 class="mb-0">
+                                    <%= blog.title %>
+                                </h3>
+                                <div class="mb-1 text-body-secondary">Nov 12</div>
+                                <p class="card-text mb-auto">
+                                    <%= blog.snippet %>
+                                </p>
+                                <a href="/blogs/<%= blog._id %>" class="icon-link gap-1 icon-link-hover stretched-link">
+                                    Continue reading
+                                    <svg class="bi">
+                                        <use xlink:href="#chevron-right"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="col-auto d-none d-lg-block">
+                                <svg class="bd-placeholder-img" width="200" height="250"
+                                    xmlns="http://www.w3.org/2000/svg" role="img"
+                                    aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
+                                    focusable="false">
+                                    <title>Placeholder</title>
+                                    <rect width="100%" height="100%" fill="#55595c"></rect>
+                                    <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <% }); %>
+                        <% } else{ %>
+                            <p>There are no blogs to display!</p>
+                            <% } %>
+            
+        </div>
+    </main>
+
+
+
+
+    <footer>
+        <p><a href="https://www.flaticon.com/free-icons/paw" title="paw icons">Paw icons created by afif fudin - Flaticon</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous">
+    </script>
+</body>
+</html>
